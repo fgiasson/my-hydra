@@ -39,6 +39,17 @@ it as-is, then the following packages will be required.
  - =docker=: container
  - =projectile=: project management
 
+* Usage
+
+The leader key is =.= /(dot)/.
+
+To quickly access the key bindings of the major mode of the current buffer, you
+just have to double tap =.=
+
+The posframe can be exited with one of those keys: =ESC=, =q= or =SPC=
+
+The leader key works in all modes except =INSERT=
+
 * Install
 
 To install it, you only have to add those lines in the
