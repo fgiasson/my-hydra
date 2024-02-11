@@ -382,10 +382,15 @@
 (pretty-hydra-define hydra-project
   (:color blue :quit-key ("q" "SPC") :title hydra-project--title)
   ("Actions"
-   (("s" projectile-switch-project "switch project")
+   (("s" projectile-switch-open-project "switch open project")
+    ("S" projectile-switch-project "switch project")
     ("i" projectile-project-info "info")
     ("a" projectile-add-known-project "add")
-    ("d" projectile-discover-projects-in-search-path "discover new projects"))))
+    ("r" projectile-find-references "find references")
+    ("f" projectile-find-file "find file")
+    ("v" projectile-shell "vterm")
+    ("d" projectile-discover-projects-in-directory "discover new projects")
+    ("c" projectile-comander "help (commander)"))))
 
 (defvar hydra-bookmark--title (with-faicon "bookmark" "Bookmark" 1 -0.05))
 (pretty-hydra-define hydra-bookmarks
