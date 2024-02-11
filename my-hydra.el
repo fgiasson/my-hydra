@@ -77,7 +77,7 @@
 
 ;; Enable the "." leader key for the main hydra in multiple different modes
 ;; We use "." to be aligne with Spacemacs's "," leader key
-(evil-set-leader ('normal 'visual 'operator 'motion 'emacs) (kbd "."))
+(evil-set-leader '(normal visual operator motion emacs) (kbd "."))
 (define-key evil-normal-state-map (kbd ".") 'hydra-main/body)
 
 ;; we also define M-. that is used if "t" is used in the current major mode
