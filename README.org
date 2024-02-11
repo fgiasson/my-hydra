@@ -1,0 +1,72 @@
+* My Hydra
+
+=my-hydra= is a series of =pretty-hydra= of all the keybindings I use on a
+nearly daily basis during work (development, management, infrastructure
+management, etc.).
+
+I made it publicly available in case it could help some Emacs users to discover
+other ways to tweak Emacs to make it prettier and optimized for one's own
+personal workflow.
+
+* Packages used by the key bindings
+
+This package is not mean to be installed as-is, however if anyone wants to use
+it as-is, then the following packages will be required.
+
+ - =spacemacs=: Emacs distro
+ - =org=: everything
+ - =major-mode-hydra=: hydra for major modes
+ - =hydra-posframe=: hydra in a posframe
+ - =pretty-hydra=: pretty UI for hydra
+ - =consult=: search & navigation
+ - =eyebrowse=: windows configurations
+ - =dired=: browsing files
+ - =evil=: Vim keybindings
+ - =org-roam=: Org notes system
+ - =org-remark=: remark in Org documents
+ - =citar=: bibliographies management
+ - =org-pandoc=: export documents
+ - =org-inlinetask=: inline task in Org documents
+ - =org-agenda=: agenda
+ - =org-ql=: querying org files
+ - =smart-shift=: moving sections around
+ - =vterm=: shell terminal
+ - =copilot=: Github Copilot
+ - =flycheck=: linter
+ - =python=: Python
+ - =lsp=: LSP
+ - =magit=: git client
+ - =docker=: container
+ - =projectile=: project management
+
+* Install
+
+To install it, you only have to add those lines in the
+=dotspacemacs-additional-packages= section of your =.spacemacs= configuration
+file.
+
+#+begin_src elisp
+
+(my-hydra :location (recipe
+                     :fetcher github
+                     :repo "fgiasson/my-hydra"
+                     :files ("*.el")))
+
+(hydra-posframe :location (recipe
+                           :fetcher github
+                           :repo "Ladicle/hydra-posframe"
+                           :files ("*.el")))
+
+(hydra-posframe :location (recipe
+                           :fetcher github
+                           :repo "Ladicle/hydra-posframe"
+                           :files ("*.el")))
+
+(copilot :location (recipe
+                    :fetcher github
+                    :repo "zerolfx/copilot.el"
+                    :files ("*.el" "dist")))
+                           #+end_src
+
+All other packages are available on =melpa= and can be installed using the
+package management system.
