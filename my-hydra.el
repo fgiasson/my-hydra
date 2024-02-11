@@ -99,7 +99,8 @@
     ("T" hydra-org-tags/body "tags")
     ("d" org-time-stamp "date/time")
     ("l" org-insert-link "link")
-    ("I" org-inlinetask-insert-task "inline task"))
+    ("I" org-inlinetask-insert-task "inline task")
+    ("L" org-lint "lint"))
    "Development"
    (("b" hydra-org-babel/body "babel"))))
 
