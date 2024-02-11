@@ -276,6 +276,8 @@
   (:color blue :quit-key ("q" "SPC") :title hydra-flycheck--title)
   ("Flycheck"
    (("v" flycheck-verify-setup "verify setup")
+    ("c" flycheck-describe-checker "describe checker")
+    ("s" flycheck-select-checker "select checker")
     ("t" flycheck-mode "toggle" :toggle t))
 
    "Error"
