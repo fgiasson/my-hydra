@@ -397,11 +397,15 @@
 
 (defvar hydra-bookmark--title (with-faicon "bookmark" "Bookmark" 1 -0.05))
 (pretty-hydra-define hydra-bookmarks
-  (:color blue :quit-key ("q" "SPC") :title "Bookmarks" :idle 1.0)
+  (:color blue :quit-key ("q" "SPC") :title "Bookmarks")
   ("Manage"
    (("c" bookmark-set "Create a bookmark")
+    ("u" bmkp-url-target-set "Create a URL bookmark")
+    ("s" bmkp-set-snippet-bookmark "Create a snippet bookmark")
+    ("j" bookmark-jump "Jump to bookmark")
+    ("e" edit-bookmarks "Edit bookmarks")
     ("l" consult-bookmark "List and jump bookmarks")
-    ("s" bookmark-save "Save bookmarks to disk")
+    ("S" bookmark-save "Save bookmarks to disk")
     ("r" bookmark-rename "Rename a bookmark")
     ("d" bookmark-delete "Delete a bookmark"))))
 

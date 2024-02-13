@@ -38,6 +38,7 @@ it as-is, then the following packages will be required.
  - =magit=: git client
  - =docker=: container
  - =projectile=: project management
+ - =bookmark+=: enhanced bookmarks
 
 * Usage
 
