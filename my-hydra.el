@@ -70,7 +70,8 @@
     ("l" hydra-lsp/body "lsp")
     ("L" hydra-linter/body "linter")
     ("g" hydra-magit/body "magit")
-    ("p" hydra-project/body "project"))
+    ("p" hydra-project/body "project")
+    ("t" org-babel-tangle-jump-to-org "jump to Org block"))
 
    "Emacs"
    (("h" hydra-help/body "help")
@@ -144,7 +145,8 @@
    (("b" org-babel-execute-buffer "buffer")
     ("B" org-babel-execute-src-block "block"))
    "Action"
-   (("m" org-edit-special "edit in major mode"))))
+   (("j" org-babel-tangle-jump "jump to tangled code")
+    ("m" org-edit-special "edit in major mode"))))
 
 (defvar hydra-org-tags--title (with-mode-icon 'org "Tags" 1 -0.05))
 (pretty-hydra-define hydra-org-tags
@@ -284,8 +286,7 @@
     ("m" spacemacs/python-test-module "run module tests"))
    "Actions"
    (("l" hydra-linter/body "Linter")
-    ("s" python-sort-imports "sort imports")
-    ("j" org-babel-tangle-jump-to-org "jump to Org block"))))
+    ("s" python-sort-imports "sort imports"))))
 
 (defvar hydra-flycheck--title (with-material "check" "Linter" 1 -0.05))
 (pretty-hydra-define hydra-linter
