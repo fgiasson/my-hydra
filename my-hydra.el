@@ -139,11 +139,12 @@
     ("d" org-babel-detangle "detangle"))
    "Motion"
    (("n" org-babel-next-src-block "next")
-    ("p" org-babel-previous-src-block "previous")
-    ("j" org-babel-tangle-jump-to-block "jump to block"))
+    ("p" org-babel-previous-src-block "previous"))
    "Execute"
    (("b" org-babel-execute-buffer "buffer")
-    ("B" org-babel-execute-src-block "block"))))
+    ("B" org-babel-execute-src-block "block"))
+   "Action"
+   (("m" org-edit-special "edit in major mode"))))
 
 (defvar hydra-org-tags--title (with-mode-icon 'org "Tags" 1 -0.05))
 (pretty-hydra-define hydra-org-tags
@@ -283,7 +284,8 @@
     ("m" spacemacs/python-test-module "run module tests"))
    "Actions"
    (("l" hydra-linter/body "Linter")
-    ("s" python-sort-imports "sort imports"))))
+    ("s" python-sort-imports "sort imports")
+    ("j" org-babel-tangle-jump-to-org "jump to Org block"))))
 
 (defvar hydra-flycheck--title (with-material "check" "Linter" 1 -0.05))
 (pretty-hydra-define hydra-linter
@@ -366,7 +368,9 @@
    "In Folder"
    (("p" #'spacemacs/compleseus-search-projectile "project")
     ("o" #'spacemacs/compleseus-search-auto "folder")
-    ("l" #'org-ql-open-link-in-org-directory "org links"))))
+    ("l" #'org-ql-open-link-in-org-directory "org links"))
+   "In Buffers"
+   (("b" #'consult-line-multi "buffer"))))
 
 (defvar hydra-windows--title (with-faicon "windows" "Help" 1 -0.05))
 (pretty-hydra-define hydra-windows
