@@ -46,6 +46,7 @@
   (:color blue :quit-key ("q" "SPC") :title hydra-of-hydras--title)
   ("Misc"
    (("b" hydra-bookmarks/body "bookmarks")
+    ("d" hydra-dogears/body "dogears")
     ("a" hydra-applications/body "applications")
     ("m" hydra-multicursor/body "multi-cursor")
     ("/" hydra-smartshift/body "smart shift")
@@ -56,7 +57,7 @@
    "Spaces"
    (("e" eyebrowse-switch-to-window-config "switch workspace")
     ("E" hydra-eyebrowse/body "eyebrowse")
-    ("d" hydra-desktop/body "desktop")
+    ("D" hydra-desktop/body "desktop")
     ("w" hydra-windows/body "windows"))
 
    "File"
@@ -83,7 +84,17 @@
 ;; we also define M-. that is used if "t" is used in the current major mode
 (define-key evil-normal-state-map (kbd "M-.") 'hydra-main/body)
 
-
+(defvar hydra-dogears--title (with-faicon "compass" "Dogears" 1 -0.05))
+(pretty-hydra-define hydra-dogears
+  (:color blue :quit-key ("q" "SPC") :title hydra-dogears--title)
+  ("Actions"
+   (("g" dogears-go "go")
+    ("r" dogears-remember "remember")
+    ("j" dogears-list "list")
+    ("h" dogears-back "back")
+    ("l" dogears-forward "forward")
+    ("m" dogears-mode "mode" :toggle t)
+    )))
 
 (defvar hydra-org--title (with-mode-icon 'org-mode " Org" 1 -0.05))
 (major-mode-hydra-define org-mode
@@ -99,7 +110,10 @@
     ("T" hydra-org-tags/body "tags")
     ("d" org-time-stamp "date/time")
     ("l" org-insert-link "link")
+    ("a" org-archive-subtree "archive")
     ("I" org-inlinetask-insert-task "inline task")
+    ("L" org-lint "lint")
+    ("m" org-margin-mode "margin" :toggle t))
    "Development"
    (("b" hydra-org-babel/body "babel"))))
 

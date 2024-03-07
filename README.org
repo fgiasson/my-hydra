@@ -40,6 +40,7 @@ it as-is, then the following packages will be required.
  - =projectile=: project management
  - =bookmark+=: enhanced bookmarks
  - =org-margin=: adding marging to org files
+ - =dogears=: adding dogears actions
 
 * Usage
 
