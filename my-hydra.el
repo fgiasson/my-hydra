@@ -308,7 +308,8 @@
 (pretty-hydra-define hydra-lsp
   (:color blue :quit-key ("q" "SPC") :title hydra-lsp--title)
   ("Server"
-   (("w" lsp-describe-session "Describe session"))
+   (("w" lsp-describe-session "Describe session")
+    ("l" lsp-workspace-restart "Restart server"))
 
    "Navigation"
    (("d" lsp-find-definition "Jump to definition")
