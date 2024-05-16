@@ -407,6 +407,7 @@
     ("S" projectile-switch-project "switch project")
     ("i" projectile-project-info "info")
     ("a" projectile-add-known-project "add")
+    ("k" projectile-remove-known-project "remove")
     ("r" projectile-find-references "find references")
     ("f" projectile-find-file "find file")
     ("v" projectile-shell "vterm")
